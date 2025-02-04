@@ -1,4 +1,4 @@
-# Data Scientist
+# Game Developer
 
 #### Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
 
