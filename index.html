@@ -261,6 +261,21 @@
         const menu = document.getElementById("mobileMenu");
         menu.classList.toggle("active");
     }
+
+     let prevScrollPos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+            navbar.style.top = "0"; // Show navbar
+        } else {
+            navbar.style.top = "-60px"; // Hide navbar (adjust the value if needed)
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
 </script>
 
 </body>
