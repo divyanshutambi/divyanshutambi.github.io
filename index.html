@@ -18,12 +18,75 @@
             color: #fff;
             padding: 15px 0;
             text-align: center;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         nav a {
             color: #fff;
-            margin: 0 15px;
             text-decoration: none;
+            padding: 8px 16px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 5px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* Menu visibility */
+        .menu {
+            display: flex;
+        }
+
+        .menu.active {
+            display: block;
+            text-align: center;
+            background-color: #333;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            padding: 10px 0;
+        }
+
+        /* Menu for mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .menu a {
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Main Content */
@@ -31,12 +94,6 @@
             padding: 50px 20px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-/*         .section{
-            
-        } */
         .container {
             display: flex;
             justify-content: space-between;
@@ -97,30 +154,45 @@
 
 <header>
     <nav>
-        <a href="#home">Home</a>
+        <a href="#info">Home</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact Us</a>
         <a href="#about">About Me</a>
     </nav>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="menu" id="mobileMenu">
+        <a href="#info">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Me</a>
+    </div>
 </header>
 
 <section>
-    <div class="container section">
-        <div id="home">
+    <div id="info" class="container">
+        <div>
             <h1>Hi, I am Divyanshu Tambi, Game Developer</h1>
         </div>
         <div>
-            <img src="assets/imgs/ProfilePic.jpg" alt="Divyanshu Tambi">
+            <img src="assets/imgs/profilePic.jpg" alt="Divyanshu Tambi">
         </div>
     </div>
 </section>
 
-<section class="about-me section">
+<section class="about-me">
     <div>
-        <img src="assets/imgs/ProfilePic.jpg" alt="Divyanshu Tambi">
+        <img src="assets/imgs/profilePic.jpg" alt="Divyanshu Tambi">
     </div>
-    <div id="about">
-        <h2>About Me</h2>
+    <div>
+        <h2 id="about">About Me</h2>
         <p>
             I am a passionate game developer with experience in creating interactive, exciting, and engaging gaming experiences. 
             I specialize in game mechanics, programming, and have a keen interest in game design. I enjoy collaborating with 
@@ -132,7 +204,7 @@
 
 <section>
     <h2 id="projects">My Projects</h2>
-    <div class="projects section">
+    <div class="projects">
         <div class="project">
             <img src="project-image1.jpg" alt="Project 1">
             <h3>Project 1</h3>
@@ -160,13 +232,21 @@
     </div>
 </section>
 
-<footer id="contact section">
+<footer id="contact">
     <p>Contact Info</p>
-    <a href="mailto:divyanshutambi1408@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/divyanshu-tambi-0993881ba/">LinkedIn</a>
-    <a href="https://x.com/tambi_divyanshu?t=rJ3fbqCcBIoGtjraevEIGw&s=08">Twitter</a>
-    <a href="https://github.com/divyanshutambi">GitHub</a>
+    <a href="mailto:your-email@example.com">Email</a>
+    <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+    <a href="https://twitter.com/your-profile">Twitter</a>
+    <a href="https://github.com/your-profile">GitHub</a>
 </footer>
+
+<script>
+    // JavaScript to toggle the mobile menu
+    function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>
