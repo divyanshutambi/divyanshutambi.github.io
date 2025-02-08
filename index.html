@@ -15,11 +15,11 @@
         /* Header Style */
         header {
 /*             background-color: #333; */
-            color: #000;
+            color: #0000;
             background-color: #fff;
             padding: 15px 0;
             text-align: center;
-            position: relative;
+            position: fixed;
             box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
         }
 
@@ -264,20 +264,20 @@
         menu.classList.toggle("active");
     }
 
-    //  let prevScrollPos = window.pageYOffset;
-    // const navbar = document.getElementById("navbar");
+     let prevScrollPos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
 
-    // window.onscroll = function () {
-    //     let currentScrollPos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
 
-    //     if (prevScrollPos > currentScrollPos) {
-    //         navbar.style.top = "0"; // Show navbar
-    //     } else {
-    //         navbar.style.top = "-60px"; // Hide navbar (adjust the value if needed)
-    //     }
+        if (prevScrollPos > currentScrollPos) {
+            navbar.style.top = "0"; // Show navbar
+        } else {
+            navbar.style.top = "-60px"; // Hide navbar (adjust the value if needed)
+        }
 
-    //     prevScrollPos = currentScrollPos;
-    // };
+        prevScrollPos = currentScrollPos;
+    };
 </script>
 
 </body>
