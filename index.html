@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; /* Smooth scroll enabled */
     }
 
     body {
@@ -20,7 +20,7 @@
       line-height: 1.6;
       min-height: 100vh;
       padding: 0;
-/*       scroll-behavior: smooth; /* Smooth scroll enabled */ */
+      
     }
 
     /* Navigation bar */
@@ -93,11 +93,13 @@
       margin-top: 20px;
     }
 
+    /* Projects Section */
     .project-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Default for mobile */
       gap: 30px;
       margin-top: 30px;
+      justify-items: center; /* Ensures items are center-aligned in grid */
     }
 
     .project-card {
@@ -223,9 +225,20 @@
       nav ul {
         display: none;
       }
+      header{
+        padding: 30px 0;
+      }
 
       .menu-btn {
         display: block;
+      }
+    }
+
+    /* Desktop Grid Adjustment */
+    @media (min-width: 1024px) {
+      .project-cards {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust column size on desktop */
+        justify-items: center; /* Ensure projects are centered in grid cells */
       }
     }
   </style>
@@ -263,10 +276,7 @@
   <section id="home">
     <div class="container">
       <h1>Welcome to My Portfolio</h1>
-      <p>I am a passionate game developer with experience in creating interactive, exciting, and engaging gaming experiences. 
-            I specialize in game mechanics, programming, and have a keen interest in game design. I enjoy collaborating with 
-            teams to bring creative ideas to life through code. My journey in game development has equipped me with diverse skills 
-            ranging from problem-solving to creativity, and I always look forward to learning and growing in this field.</p>
+      <p>Hi, I'm a passionate game developer with experience in creating immersive gaming experiences. Explore my work below!</p>
     </div>
   </section>
 
@@ -294,7 +304,7 @@
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
-      <p>I'm a game developer with skills in game mechanics, programming, and designing game worlds. I specialize in Unity Game Engine.</p>
+      <p>I'm a game developer with skills in game mechanics, programming, and designing game worlds. I specialize in Unity and Unreal Engine.</p>
     </div>
   </section>
 
