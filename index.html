@@ -21,8 +21,10 @@
     header {
       background-color: #333;
       padding: 10px 0;
+      position: relative;
     }
 
+    /* Navigation Bar */
     nav ul {
       list-style: none;
       display: flex;
@@ -41,6 +43,24 @@
 
     nav ul li a:hover {
       text-decoration: underline;
+    }
+
+    /* Hamburger Menu Button for Mobile */
+    .menu-btn {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .menu-btn div {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease;
     }
 
     /* Section Styling */
@@ -127,6 +147,46 @@
       margin-top: 40px;
     }
 
+    /* Mobile Navigation Menu */
+    .nav-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      padding-top: 60px;
+      z-index: 99;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu ul {
+      display: block;
+      text-align: center;
+    }
+
+    .nav-menu ul li {
+      padding: 20px;
+      border-bottom: 1px solid #444;
+    }
+
+    .nav-menu ul li a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .nav-menu ul li a:hover {
+      background-color: #444;
+    }
+
+    /* Show Menu */
+    .nav-menu.active {
+      display: block;
+    }
+
     /* Responsive Design for Mobile */
     @media (max-width: 768px) {
       .container {
@@ -138,11 +198,11 @@
       }
 
       nav ul {
-        flex-direction: column;
+        display: none;
       }
 
-      nav ul li {
-        margin: 10px 0;
+      .menu-btn {
+        display: block;
       }
     }
   </style>
@@ -151,6 +211,11 @@
 
   <!-- Navigation Bar -->
   <header>
+    <div class="menu-btn" id="menuBtn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -160,6 +225,16 @@
       </ul>
     </nav>
   </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
   <!-- Home Section -->
   <section id="home">
@@ -215,6 +290,23 @@
   <footer>
     <p>&copy; 2025 Game Developer Portfolio</p>
   </footer>
+
+  <script>
+    // Toggle the navigation menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close the menu if clicked outside of it
+    window.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        navMenu.classList.remove('active');
+      }
+    });
+  </script>
 
 </body>
 </html>
