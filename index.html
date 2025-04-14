@@ -16,7 +16,7 @@
     body {
       font-family: 'Orbitron', sans-serif;
 /*       background: linear-gradient(to bottom, #1e1e1e, #333); */
-      background: linear-gradient(to bottom, #1E2012, #2C9);
+      background: linear-gradient(currentColor, #c0392b, #2e4053);
       color: #FED;
       line-height: 1.6;
       min-height: 100vh;
@@ -26,7 +26,7 @@
 
     /* Navigation bar */
     header {
-      background-color: #000;
+      background-color: #1c2833;
       padding: 15px 0;
       position: relative;
       text-align: center;
@@ -151,8 +151,9 @@
 
     .resume-btn {
 /*       background-color: #00ff99; */
-      background-color: #288;
-      color: #000;
+      background-color: #21618c;
+      
+      color: #fff;
       padding: 15px 30px;
       font-size: 20px;
       text-decoration: none;
@@ -161,18 +162,20 @@
       text-transform: uppercase;
       font-weight: bold;
       border: 2px solid #00cc7a;
+      border-radius: 15px;
       transition: background-color 0.3s ease;
     }
 
     .resume-btn:hover {
-      background-color: #00cc7a;
+      background-color: #2e86c1;
+      color: #000;
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #000;
+      background-color: #1c2833;
       color: #fff;
       font-size: 16px;
     }
@@ -185,7 +188,7 @@
       right: 0;
       width: 250px;
       height: 100%;
-      background-color: #333;
+      background-color: #1c2833;
       padding-top: 60px;
       z-index: 99;
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -228,7 +231,9 @@
     /* Responsive Design for Mobile */
     @media (max-width: 768px) {
       .container {
-        width: 90%;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
       }
 
       .project-cards {
