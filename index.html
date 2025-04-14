@@ -27,7 +27,8 @@
     /* Navigation bar */
     header {
       background-color: #1c2833;
-      padding: 15px 0;
+/*       padding: 15px 0; */
+      padding: 5px 0px;
       position: relative;
       text-align: center;
     }
@@ -51,10 +52,19 @@
     }
 
     /* Navigation links */
+    nav{
+      display: flex;
+      padding-left: 50px;
+    }
+    nav img{
+      height: 50px;
+    }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
+      padding-left: 725px;
+      padding-top: 7px;
     }
 
     nav ul li {
@@ -254,7 +264,7 @@
         display: none;
       }
       header{
-        padding: 5px 0;
+        padding-top: 7px;
       }
 
       .menu-btn {
@@ -275,15 +285,15 @@
 
   <!-- Navigation Bar -->
   <header>
-    <div class="logo-img">
-      <img src="assets/imgs/PortfolioLogoImg1.jpg" alt="Divyanshu Portfolio" >
-    </div>
+<!--     <div class="logo-img">
+    </div> -->
     <div class="menu-btn" id="menuBtn">
       <div></div>
       <div></div>
       <div></div>
     </div>
     <nav>
+      <img src="assets/imgs/PortfolioLogoImg1.jpg" alt="Divyanshu Portfolio" >
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
