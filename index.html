@@ -115,6 +115,11 @@
       justify-items: normal; /* Ensures items are center-aligned in grid */
     }
 
+    section.no-style {
+      all: unset; /* optional: removes inherited styles */
+      background: none;
+      padding: 0;
+    }
     .project-card {
       background-color: #234;
       border: 2px solid #00ff99;
@@ -381,7 +386,17 @@
       </div>
     </div>
   </section>
-
+  <section class="no-style">
+    <div class="container">
+      <div class="project-cards">
+        <div class="project-card" onclick="window.open('assets/imgs/The King Adam Demo.mp4', '_blank')" style="cursor: pointer;">
+          <img src="assets/imgs/TheAdamKingThumbnail.png" alt="The King Adam">
+          <h3>The Adam King</h3>
+          <p>The Adam King is a fast-paced 2D platformer where you help Adam escape deadly enemies, spike traps, and spinning wheels to reach his throne. Dodge, jump, and survive each level in this retro-inspired adventure!</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
